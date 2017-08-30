@@ -8,6 +8,10 @@ $dia = date("d");
 $mes = date("m");
 switch($mes)
 {
+    case 12 or 01 or 02: 
+                echo "es verano";
+                break;
+
 }
 var_dump($dia);
 ?>
