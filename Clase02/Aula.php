@@ -24,7 +24,10 @@ class Aula implements IMostrarPersonas
    {
        $this->profesor = $profe;
    }
-
+   public function MostrarAula()
+   {
+       $this->profesor->MostrarDatos(); 
+   }
     public function MostrarPersonas()
     {
         echo "hola mundo";

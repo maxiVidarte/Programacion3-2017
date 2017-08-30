@@ -6,5 +6,5 @@ include_once "./Aula.php";
 
 
 $unAula= new Aula("primer grado");
-    var_dump($unAula);
+$unAula->AgregarProfesor();
 ?>
