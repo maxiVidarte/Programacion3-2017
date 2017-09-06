@@ -2,10 +2,8 @@
 include_once "./Persona.php";
 include_once "./Profesor.php";
 include_once "./Alumno.php";
-//include_once "./miInterfaz.php"
-interface IMostrarPersonas{
-    public function MostrarPersonas();
-}
+include_once "./miInterfaz.php";
+
 class Aula implements IMostrarPersonas
 {
     public $nomAul;
