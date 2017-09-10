@@ -22,9 +22,16 @@ class Aula implements IMostrarPersonas
     public function AgregarProfesor($profesor){
         array_push($this->profesores,$profesor);
     }
+    public function BuscarAlumno($alumno){
+        var_dump(in_array($alumno,$this->alumnos));
+    }
     public function MostrarPersonas(){
-        
-        
+        foreach ($this->alumnos as $key) {
+              echo $key->MostrarDatos()."</br>";
+        }
+        foreach ($this->profesores as $key) {
+            echo $key->MostrarDatos()."</br>";
+        }
     }
 }
 
