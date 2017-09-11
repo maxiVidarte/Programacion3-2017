@@ -43,13 +43,28 @@ class Instituto
             }
         }
         echo $veces."</br>";
-    }
-    public function PersonaPorApellidoEnAulas($apellido){
-      
+     }
+     public function PersonaPorApellidoEnAulas($apellido){
+        echo "La persona ".$apellido." se encuentra en las siguientes aulas: "."</br>";
+        foreach ($this->arrayAulas as $value) {
+            if($value->BuscarPersonaPorApellido($apellido)){
+                echo $value->nomAul."</br>";
+            }
         }
-
+        }
+        public function CantidadYListadoConMismoApNomSex($nombre, $apellido,$sexo){
+            echo "La persona ".$nombre." ".$apellido." se encuentra en las siguientes aulas: "."</br>";
+            $veces = 0;
+            foreach ($this->arrayAulas as $value) {
+                if($value->BuscaPerPorNomApSex($nombre,$apellido,$sexo)){
+                    $veces++;
+                    echo $value->nomAul."</br>";
+                }
+            }
+            echo $veces."</br>";
+        }
     
-    public function ProfesoresPorLegajo($legajo){
+     public function ProfesoresPorLegajo($legajo){
         echo "El Profesor: ".$legajo." se encuentra en las siguientes aulas: "."</br>";
         foreach ($this->arrayAulas as $value) {
             if($value->BuscarProfesorPorLegajo($legajo)){

@@ -50,15 +50,45 @@ class Aula implements IMostrarPersonas
             }
         }
     }
+    public function BuscarPersonaPorApellido($apellido){
+        $persona;
+        foreach ($this->profesores as $value) {
+            $persona = explode("-",$value->MostrarDatos());
+            if($persona[2]=="Apellido: ".$apellido){
+                return true;
+            }
+        }
+        foreach ($this->alumnos as $value) {
+            $persona = explode("-",$value->MostrarDatos());
+            if($persona[2]=="Apellido: ".$apellido){
+                return true;
+            }
+        }
+    }
     public function MostrarPersonas(){
         $miString = "" ;
         foreach ($this->alumnos as $key) {
-            $miString .= "&/".$key->MostrarDatos();
+            $miString .= "/n".$key->MostrarDatos();
         }
         foreach ($this->profesores as $key) {
-            $miString .= "&/".$key->MostrarDatos();
+            $miString .= "/n".$key->MostrarDatos();
         }
         return $miString;
+    }
+    public function BuscaPerPorNomApSex($nombre,$apellido,$sexo){
+        $persona;
+        foreach ($this->alumnos as $value) {
+            $persona = explode("-",$value->MostrarDatos());
+            if($persona[1]=="Nombre: ".$nombre && $persona[2]=="Apellido: ".$apellido && $persona[3]=="Sexo: ".$sexo){
+                return true;
+            }
+        }
+        foreach ($this->profesores as $value) {
+            $persona = explode("-",$value->MostrarDatos());
+            if($persona[1]=="Nombre: ".$nombre && $persona[2]=="Apellido: ".$apellido && $persona[3]=="Sexo: ".$sexo){
+                return true;
+            }
+        }
     }
 }
 

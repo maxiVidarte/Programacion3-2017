@@ -26,9 +26,10 @@ $instituto->AgregarAula($aula2);
 $instituto->AgregarAula($aula3);
 
 
-$instituto->AlumnoEnAulaNyA("maximiliano","vidarte");
-$instituto->AlumnoPorLibreta(1235);
-$instituto->ProfesoresPorLegajo(2);
-$instituto->AlumnoCantidadPorLibreta(1234);
-$instituto->PersonaPorApellidoEnAulas("vidarte");
+//$instituto->AlumnoEnAulaNyA("maximiliano","vidarte");
+//$instituto->AlumnoPorLibreta(1235);
+//$instituto->ProfesoresPorLegajo(2);
+//$instituto->AlumnoCantidadPorLibreta(1234);
+//$instituto->PersonaPorApellidoEnAulas("norris");
+$instituto->CantidadYListadoConMismoApNomSex("maximiliano","vidarte","masculino");
 ?>
