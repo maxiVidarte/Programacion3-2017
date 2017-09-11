@@ -9,7 +9,7 @@ class Aula implements IMostrarPersonas
     public $nomAul;
     public $alumnos;
     public $profesores;
-    
+
     function __construct($nombre)
     {
         $this->nomAul = $nombre;
@@ -22,16 +22,43 @@ class Aula implements IMostrarPersonas
     public function AgregarProfesor($profesor){
         array_push($this->profesores,$profesor);
     }
-    public function BuscarAlumno($alumno){
-        var_dump(in_array($alumno,$this->alumnos));
+    public function BuscarAlumnoPorNombreYApellido($nombre,$apellido){
+        $persona;
+        foreach ($this->alumnos as $value) {
+            $persona= explode("-",$value->MostrarDatos());
+            if($persona[1]=="Nombre: ".$nombre && $persona[2]=="Apellido: ".$apellido){
+               return true;
+            }
+        }
+    }
+    
+    public function BuscarAlumnoPorNumeroLibreta($libreta){
+        $persona;
+        foreach ($this->alumnos as $value) {
+            $persona = explode("-",$value->MostrarDatos());
+            if($persona[4]=="Libreta: ".$libreta){
+                return true;
+            }
+        }
+    }
+    public function BuscarProfesorPorLegajo($legajo){
+        $persona;
+        foreach ($this->profesores as $value) {
+            $persona = explode("-",$value->MostrarDatos());
+            if($persona[4]=="Legajo: ".$legajo){
+                return true;
+            }
+        }
     }
     public function MostrarPersonas(){
+        $miString = "" ;
         foreach ($this->alumnos as $key) {
-              echo $key->MostrarDatos()."</br>";
+            $miString .= "&/".$key->MostrarDatos();
         }
         foreach ($this->profesores as $key) {
-            echo $key->MostrarDatos()."</br>";
+            $miString .= "&/".$key->MostrarDatos();
         }
+        return $miString;
     }
 }
 
