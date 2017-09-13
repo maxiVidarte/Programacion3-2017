@@ -7,5 +7,5 @@ $accion = $_POST['accion'];
 
 $Auto = new Vehiculo($patente);
 estacionamiento::$accion($Auto);
-var_dump($Auto);
+
 ?>
